@@ -9,25 +9,26 @@ import java.util.Scanner;
 
 public class Encryption {
     public static void main(String[] args) {
-        Scanner scanner= new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Input the string : ");
-        String input= scanner.next();
+        String input = scanner.next();
         Encryption.encryption(input);
     }
+
     public static void encryption(String input) {
         char[] charArray = input.toCharArray();
         for (char c : charArray) {
-            int temp= (int)c+4;
+            int temp = (int) c + 4;
             if (Character.isUpperCase(c)) {
-                if (temp>90){
-                    temp=temp-90+64;
+                if (temp > 90) {
+                    temp = temp - 90 + 64;
                 }
             } else if (Character.isLowerCase(c)) {
-                if (temp>122){
-                    temp=temp-122+97;
+                if (temp > 122) {
+                    temp = temp - 122 + 97;
                 }
             }
-            c=(char)temp;
+            c = (char) temp;
             System.out.print(c);
         }
     }
